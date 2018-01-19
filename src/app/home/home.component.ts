@@ -42,13 +42,15 @@ constructor() { }
   }
 
   addItem(){
+    if (!this.goalText) return;
     this.goals.push(this.goalText);
     this.goalText ="";
     this.itemCount = this.goals.length;
 
   }
   removeItem(i){
-    this.goals.splice(i,1);
     
+    this.goals.splice(i,1);
+    this.itemCount = this.goals.length;
   }
 }
