@@ -1,5 +1,6 @@
 import { Component, OnInit, Optional } from '@angular/core';
 import { trigger, style, transition, animate, keyframes, query, stagger } from '@angular/animations';
+import { DataService } from "../data.service";
 
 @Component({
   selector: 'app-home',
@@ -33,12 +34,16 @@ export class HomeComponent implements OnInit {
 itemCount: number ; //interpolation 
 btnText: string = 'Add an Item'; //property 
 goalText: string = 'My First Life Goal'; //model 
-goals = ['My First Life Goal','Climb Mountain', 'Go ice Skiing']; 
-constructor() { }
+  goals =[];
+//goals = ['My First Life Goal','Climb Mountain', 'Go ice Skiing']; 
+constructor(private _data: DataService) { }
 
 // Life cycle hook init when compo loaded
   ngOnInit() {
+    
+    this._data.goal.subscribe(res=> this.goals = res);
     this.itemCount = this.goals.length;
+    this._data.changeGoal(this.goals);
   }
 
   addItem(){
@@ -46,11 +51,12 @@ constructor() { }
     this.goals.push(this.goalText);
     this.goalText ="";
     this.itemCount = this.goals.length;
-
+    this._data.changeGoal(this.goals);
   }
   removeItem(i){
     
     this.goals.splice(i,1);
     this.itemCount = this.goals.length;
+    this._data.changeGoal(this.goals);
   }
 }
