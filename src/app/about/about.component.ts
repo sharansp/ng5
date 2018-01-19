@@ -19,7 +19,7 @@ export class AboutComponent implements OnInit {
     //this._data.changeGoal(this.goals);
   }
 
-  sendHome() {
+  sendMeHome() {
     this.router.navigate(['']);
   }
 
