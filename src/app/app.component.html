@@ -1,8 +1,45 @@
-<!--The content below is only a placeholder and can be replaced.-->
+
+
+
+
+<h1 style="text-align:  left">Merlin Chat BOT</h1>
+<!-- <p style="width: 400px">
+
+</p>
+<div id="conversation" style="width: 400px; height: 400px; border: 1px solid rgb(147, 190, 67); background-color: rgb(209, 201, 201); padding: 4px; overflow: scroll"></div>
+<form id="chatform" style="margin-top: 10px" onsubmit="pushChat();">
+  <input type="text" id="wisdom" size="80" value="" placeholder="Ask NEXT BOT">
+
+</form>
+<input type="submit" class="btn" [value]="btnText" (click)="addItem()"> -->
+
+<!-- <h1>Merlin Chat-Bot</h1>
+
+<ng-container *ngFor="let message of messages | async">
+
+  <div class="message" [ngClass]="{ 'from': message.sentBy === 'bot',
+                                    'to':   message.sentBy === 'user' }">
+    {{ message.content }}
+  </div>
+
+</ng-container>
+
+
+<label for="nameField">Your Message</label>
+
+
+<input [(ngModel)]="formValue" (keyup.enter)="sendMessage()" type="text">
+<br>
+
+<button (click)="sendMessage()">Send</button>
+ -->
+
+
 <ul>
   <li><a routerLink="">Home</a></li>
   <li><a routerLink="about/19">About</a></li>
+  <li><a routerLink="chat">Chat</a></li>
 </ul>
 
 <!-- <app-home></app-home> -->
-<router-outlet></router-outlet>
+ <router-outlet></router-outlet> 

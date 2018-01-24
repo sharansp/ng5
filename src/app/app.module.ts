@@ -9,7 +9,7 @@ import { DataService } from "./data.service";
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
-
+import { ChatModule } from './chat/chat.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,8 @@ import { AboutComponent } from './about/about.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ChatModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
